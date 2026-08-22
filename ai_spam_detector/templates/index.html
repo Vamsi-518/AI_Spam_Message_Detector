@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Spam Detector</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>🤖 AI Spam Detector</h1>
+
+            <p class="subtitle">
+                Detect whether a message is Spam or Normal
+            </p>
+
+            <form method="POST">
+
+                <textarea
+                    name="message"
+                    placeholder="Enter your message here..."
+                    required>{{ message }}</textarea>
+
+                <button type="submit">
+                    🔍 Analyze Message
+                </button>
+
+            </form>
+
+
+            {% if result %}
+
+            <div class="result">
+
+                {% if result == "spam" %}
+
+                    <h2 class="spam">
+                        ⚠️ SPAM MESSAGE
+                    </h2>
+
+                    <p>
+                        This message looks suspicious.
+                    </p>
+
+                {% else %}
+
+                    <h2 class="normal">
+                        ✅ NORMAL MESSAGE
+                    </h2>
+
+                    <p>
+                        This message appears to be safe.
+                    </p>
+
+                {% endif %}
+
+                <p class="confidence">
+                    AI Confidence: {{ confidence }}%
+                </p>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
