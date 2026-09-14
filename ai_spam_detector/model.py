@@ -34,12 +34,10 @@ labels = [
     "normal", "normal", "normal", "normal", "normal"
 ]
 
-# Convert text into numerical features
 vectorizer = TfidfVectorizer()
 
 X = vectorizer.fit_transform(messages)
 
-# Create and train AI model
 model = MultinomialNB()
 model.fit(X, labels)
 
