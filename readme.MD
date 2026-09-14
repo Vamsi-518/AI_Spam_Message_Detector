@@ -100,6 +100,6 @@ python ai_spam_detector/app.py
 
 The training set is intentionally small and embedded in the source code. The confidence value is the model's predicted class probability, not a guarantee that the message is safe. For production use, replace the sample data with a larger representative dataset, evaluate the model on held-out data, and save/load a versioned trained model.
 
-## Development Notes
+## Development Notes.
 
 The application currently runs with Flask debug mode enabled when started with `python ai_spam_detector\app.py`. Use a production WSGI server and disable debug mode before deploying publicly.
